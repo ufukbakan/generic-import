@@ -8,7 +8,7 @@ const parentFile = module.parent && module.parent.filename;
 const parentDirectory = path.dirname(parentFile || '.');
 
 // The default file extensions used by `require()`.
-const fileExtensions = new Set(['.js', '.json', '.node']);
+const fileExtensions = new Set(['.js', '.ts', '.jsx', '.tsx', '.cjs', '.mjs']);
 
 function genericImport(directory, options) {
 	directory = path.resolve(parentDirectory, directory || '');
