@@ -10,7 +10,7 @@ const parentDirectory = path.dirname(parentFile || '.');
 // The default file extensions used by `require()`.
 const fileExtensions = new Set(['.js', '.json', '.node']);
 
-function importModules(directory, options) {
+function genericImport(directory, options) {
 	directory = path.resolve(parentDirectory, directory || '');
 
 	options = {
@@ -32,7 +32,7 @@ function importModules(directory, options) {
 			const fullPath = path.join(directory, file);
 
 			if (options.recursive && fs.statSync(fullPath).isDirectory()) {
-				const subModules = importModules(fullPath, options);
+				const subModules = genericImport(fullPath, options);
 				Object.keys(subModules).forEach(key => {
 					returnValue.push({
 						"fileName": `${file}/${key}`,
@@ -62,5 +62,5 @@ function importModules(directory, options) {
 	return returnValue;
 };
 
-module.exports = importModules
+module.exports = genericImport
 

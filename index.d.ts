@@ -38,16 +38,16 @@ Import all modules in a directory.
 
 ```js
 // Assuming `foo-bar.js`, `baz-faz.js` files under the `directory` folder.
-const importModules = require('import-modules');
+const genericImport = require('generic-import');
 
-const modules = importModules('directory');
+const modules = genericImport('directory');
 
 console.log(modules);
 //=> [{fileName: "fooBar", value: [Function] }, {fileName: "bazFaz", value: [Function]}]
 ```
 @returns {<ModuleRecord<T>[]}
 */
-export default function importModules<T=unknown>(
+export default function genericImport<T=unknown>(
 	directory?: string,
 	options?: Options,
 ): ModuleRecord<T>[];
