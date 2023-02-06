@@ -14,11 +14,11 @@ export interface Options {
 	/**
 	File extensions to look for.
 
-	Unless you've set the `fileExtensions` option, that means any `.js`, `.json`, `.node` files, in that order.
+	Unless you've set the `fileExtensions` option, that means any `.js`, `.ts`, `.jsx`, `.tsx`, `.cjs`, `.mjs` files, in that order.
 
 	Ignores the caller file and files starting with `.` or `_`.
 
-	@default ['.js', '.json', '.node']
+	@default ['.js', '.ts', '.jsx', '.tsx', '.cjs', '.mjs']
 	*/
 	readonly fileExtensions?: string[];
 
