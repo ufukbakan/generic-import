@@ -1,15 +1,16 @@
-import fs from 'fs';
-import path from 'path';
+'use strict';
+const fs = require('fs');
+const path = require('path');
 
 // Prevent caching of this module so module.parent is always accurate.
 delete require.cache[__filename];
-const parentFile = __filename;
-const parentDirectory = __dirname ?? path.dirname(parentFile || '.');
+const parentFile = module.parent && module.parent.filename;
+const parentDirectory = path.dirname(parentFile || '.');
 
 // The default file extensions used by `require()`.
 const fileExtensions = new Set(['.js', '.ts', '.jsx', '.tsx', '.cjs', '.mjs']);
 
-export default function genericImport(directory, options) {
+function genericImport(directory, options) {
 	directory = path.resolve(parentDirectory, directory || '');
 
 	options = {
@@ -60,4 +61,6 @@ export default function genericImport(directory, options) {
 
 	return returnValue;
 };
+
+module.exports = genericImport
 
