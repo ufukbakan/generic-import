@@ -1,7 +1,7 @@
 {
   "name": "generic-import",
   "type": "module",
-  "version": "3.0.1",
+  "version": "3.0.0",
   "description": "Import all modules in a folder with a generic approach.",
   "main": "index.js",
   "keywords": ["import", "all", "modules", "require", "folder", "recursive", "subfolder", "path", "typed", "generic", "iterable"],

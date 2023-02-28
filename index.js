@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
+// Prevent caching of this module so module.parent is always accurate.
+delete require.cache[__filename];
 const parentFile = __filename;
 const parentDirectory = __dirname ?? path.dirname(parentFile || '.');
 
