@@ -24,7 +24,7 @@ for(const r of routers){ // for of loop supported in only ES syntax
 app.listen(8080);
 ```
 <h2>Why use this approach?</h2>
-It provides no coupling between main script file and route files. So there is much more scaleble code.
+It provides no coupling between main script file and route files. So there is much more scalable code.
 
 <h2>Options</h2>
 
@@ -33,3 +33,4 @@ It provides no coupling between main script file and route files. So there is mu
 - **recursive** *boolean* Enables search in nested folders
 
 <h3>Forked from import-modules</h3>
+<p>You can install version 2.0.0 if you need commonjs version</p>
